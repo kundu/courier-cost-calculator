@@ -26,8 +26,6 @@ Courier Cost Calculator is a Laravel-based application designed to help logistic
     ```bash
     composer install
     ```
- 
-    ```
 
 3. **Create a copy of the .env file:**
     ```bash
@@ -44,7 +42,6 @@ Courier Cost Calculator is a Laravel-based application designed to help logistic
     ```bash
     php artisan serve
     ```
- 
 
 ## Usage
 Navigate to `http://localhost:8000` to access the Courier Cost Calculator application. Enter the required details and calculate the delivery cost.
