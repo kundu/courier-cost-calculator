@@ -11,8 +11,8 @@ Courier Cost Calculator is a Laravel-based application designed to help logistic
 - Extendable and maintainable code structure
 
 ## Requirements
-- PHP 8.3+
-- Laravel 11+
+- PHP 8.3
+- Laravel 11
 - Composer
 
 ## Installation
