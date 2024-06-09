@@ -1,0 +1,49 @@
+// Import necessary modules
+import express, { Request, Response } from 'express';
+
+// Create a new express application instance
+const app = express();
+const port = 3000;
+
+// Define a route handler for the default home page
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello, world!');
+});
+
+// Start the express server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Example route to handle POST requests
+app.post('/data', (req: Request, res: Response) => {
+  const { name, age } = req.body;
+  if (!name || !age) {
+    return res.status(400).send('Name and age are required');
+  }
+  res.send(`Received data: Name - ${name}, Age - ${age}`);
+});
+
+// Example route to handle GET requests with query parameters
+app.get('/search', (req: Request, res: Response) => {
+  const { query } = req.query;
+  if (!query) {
+    return res.status(400).send('Query parameter is required');
+  }
+  res.send(`Search results for query: ${query}`);
+});
+
+// Example route to handle dynamic URL parameters
+app.get('/user/:id', (req: Request, res: Response) => {
+  const { id } = req.params;
+  res.send(`User ID: ${id}`);
+});
+
+// Error handling middleware
+app.use((err: Error, req: Request, res: Response, next: Function) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
