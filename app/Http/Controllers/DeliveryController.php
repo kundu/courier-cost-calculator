@@ -13,7 +13,7 @@ class DeliveryController extends Controller
     /**
      * Get a quote for a delivery job.
      *
-     * @param QuoteRequest $request The request containing the quote parameters.
+     * @param QuoteRequest $request The request containing the quote parameters. Webhook test
      * @return \Illuminate\Http\JsonResponse The JSON response containing the quote data.
      */
     public function getQuote(QuoteRequest $request)
